@@ -1,0 +1,25 @@
+Project migration to XML Schema (XSD) version 86 is completed.
+Project migration to XML Schema (XSD) version 87 is completed.
+Project migration to XML Schema (XSD) version 88 is completed.
+Project migration to XML Schema (XSD) version 89 is completed.
+The .xml file for plugin 'SoundSeed Air/SoundSeed Wind' is missing or is invalid.
+The source '\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Charge\magic_charge_wind\SoundSeed Wind' uses the source plugin 'SoundSeed Air/SoundSeed Wind', which is not installed.
+The .xml file for plugin 'SoundSeed Air/SoundSeed Woosh' is missing or is invalid.
+The source '\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Melee\Swing_Weapon_Type\Weapon_Swing_Sword\SoundSeed Woosh' uses the source plugin 'SoundSeed Air/SoundSeed Woosh', which is not installed.
+The .xml file for plugin 'SoundSeed Air/SoundSeed Woosh' is missing or is invalid.
+The source '\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Melee\Swing_Weapon_Type\Weapon_Swing_Dagger\SoundSeed Woosh' uses the source plugin 'SoundSeed Air/SoundSeed Woosh', which is not installed.
+The .xml file for plugin 'SoundSeed Air/SoundSeed Woosh' is missing or is invalid.
+The source '\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Melee\Swing_Weapon_Type\Weapon_Swing_Axe\SoundSeed Woosh' uses the source plugin 'SoundSeed Air/SoundSeed Woosh', which is not installed.
+The .xml file for plugin 'SoundSeed Air/SoundSeed Woosh' is missing or is invalid.
+The source '\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Melee\Swing_Weapon_Type\Weapon_Swing_Hammer\SoundSeed Woosh' uses the source plugin 'SoundSeed Air/SoundSeed Woosh', which is not installed.
+The .xml file for plugin 'SoundSeed Air/SoundSeed Woosh' is missing or is invalid.
+The source '\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Melee\Swing_Weapon_Type\Weapon_Swing_Pickaxe\SoundSeed Woosh' uses the source plugin 'SoundSeed Air/SoundSeed Woosh', which is not installed.
+The .xml file for plugin 'Wwise Convolution Reverb' is missing or is invalid.
+\Effects\Default Work Unit\Reverbs\WAG_Desert uses the audio effect plugin 'Wwise Convolution Reverb', which is not installed.
+The .xml file for plugin 'Wwise Convolution Reverb' is missing or is invalid.
+\Effects\Default Work Unit\Reverbs\WAG_DLC_Room uses the audio effect plugin 'Wwise Convolution Reverb', which is not installed.
+The .xml file for plugin 'SoundSeed Air/SoundSeed Wind' is missing or is invalid.
+The source '\Presets\Default Work Unit\SoundSeed Wind Cave' uses the source plugin 'SoundSeed Air/SoundSeed Wind', which is not installed.
+The .xml file for plugin 'Wwise Convolution Reverb' is missing or is invalid.
+\Presets\Default Work Unit\PineForest uses the audio effect plugin 'Wwise Convolution Reverb', which is not installed.
+Some new object properties have been added or obsolete properties deleted. The project file was updated. These changes will not have an impact on your project.
