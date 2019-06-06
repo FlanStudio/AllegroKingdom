@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 114430652048464346}
   - component: {fileID: 195276050817526538}
   - component: {fileID: 95913736605601140}
+  - component: {fileID: 82801422607600350}
   m_Layer: 8
   m_Name: EvilHead
   m_TagString: Enemy
@@ -417,6 +418,86 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82801422607600350
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012388946620}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95913736605601140
 Animator:
   serializedVersion: 3
@@ -675,6 +756,11 @@ MonoBehaviour:
   SmokeFX: {fileID: 1000012016212088}
   deathFX: {fileID: 1000013139223148, guid: f5963bb22ede54f15ab3ddb9e132c119, type: 2}
   keepOnDeath: {fileID: 1000012016212088}
+  audioSource: {fileID: 82801422607600350}
+  hover: {fileID: 8300000, guid: 8f9fd7cdeef08d4408de4caa34dde12b, type: 3}
+  telegraphAttack: {fileID: 8300000, guid: 4c2dc42910d1fd246b1d93a7237e69f8, type: 3}
+  charge: {fileID: 8300000, guid: 60086b1e3c6e4944a893ed54b84e7f7f, type: 3}
+  bite: {fileID: 8300000, guid: be616fc92426a77409b82881343e974e, type: 3}
   MovementRTPC: NaN
 --- !u!114 &114500207955945960
 MonoBehaviour:

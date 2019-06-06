@@ -23,6 +23,11 @@ public class WwizardStaffChargeParticles : MonoBehaviour
     [Header("End Point Settings")]
     public GameObject endPoint;
 
+    [Header("Audio:")]
+    public AudioSource audioSource;
+    public AudioClip pAppear;
+    public AudioClip pGone;
+
     public GameObject chargeDoneParticles;
 
     #region private variables
@@ -39,6 +44,9 @@ public class WwizardStaffChargeParticles : MonoBehaviour
         if (endPoint != null)
         {
             // HINT: Wizard staff charge particles appear, you may want to play the appropiate sound effect here
+            audioSource.clip = pAppear;
+            audioSource.Play();
+
             chargeRoutine = AnimatePoints();
             StartCoroutine(chargeRoutine);
 
@@ -76,6 +84,9 @@ public class WwizardStaffChargeParticles : MonoBehaviour
     void OnDisable()
     {
         // HINT: Wizard staff charge particles disappear, you may want to play the appropiate sound effect here
+        audioSource.clip = pGone;
+        audioSource.Play();
+
         StopCoroutine(chargeRoutine);
         if (lineRenderer != null)
         {

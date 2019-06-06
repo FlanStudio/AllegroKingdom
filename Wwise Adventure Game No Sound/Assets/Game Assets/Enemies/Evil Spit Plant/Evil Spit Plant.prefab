@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 114000012373020440}
   - component: {fileID: 114000012379682154}
   - component: {fileID: 135252010590374016}
+  - component: {fileID: 82259918202293778}
   m_Layer: 8
   m_Name: Evil Spit Plant
   m_TagString: Enemy
@@ -1245,6 +1246,86 @@ Transform:
   m_Father: {fileID: 4000014209350508}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!82 &82259918202293778
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013187700430}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000013744882484
 Animator:
   serializedVersion: 3
@@ -1273,11 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d194b927782944d2ca81f0d00674450b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material:
-    ID: -1018000567
-    valueGuid: 4bf069be1855164c84665c693c29ca90
-    groupGuid: c8ce850565410c458f907f1fc8884a30
-    groupID: -230521123
+  material: 0
 --- !u!114 &114000012373020440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1359,16 +1436,14 @@ MonoBehaviour:
     type: 2}
   Debugging:
     RaycastVisionRange: 0
-  HurtSound:
-    ID: 1293226255
-    valueGuid: b8d6b6aef737914abf62de8c4e37bde5
-  DeathSound:
-    ID: -1402673974
-    valueGuid: 5eb059934f1202488f450488128bb6f9
   isAlive: 1
   startPosition: {x: 0, y: 0, z: 0}
   daytime: 0
   AttackType: 6
+  audioSource: {fileID: 82259918202293778}
+  spit: {fileID: 8300000, guid: 226b16ddc95fc3c4099c8a77ad641acf, type: 3}
+  spitCharge: {fileID: 8300000, guid: 7c5e4c7684d66b6429c6fbce8933ee46, type: 3}
+  plantDeath: {fileID: 8300000, guid: 14f315d7666210a40bbbbfc5b467b0b1, type: 3}
   bulletPrefab: {fileID: 1000010899974662, guid: 5c95f6a102e4b41e89abc7926f58719b,
     type: 2}
   chargeParticles: {fileID: 1000010852368694, guid: 4aae3852ce6824049940c6fce5d1aa15,
@@ -1376,18 +1451,6 @@ MonoBehaviour:
   shootParticles: {fileID: 1000011806222222, guid: ea09e662b30aa4386af6bd74e3567ff7,
     type: 2}
   spitBulletSpawnPoint: {fileID: 1000010253179078}
-  AttackSound:
-    ID: 1042419433
-    valueGuid: 0a10915fa255464198da46a45310c142
-  ChargeSound:
-    ID: 504652456
-    valueGuid: fcd57857fa12f54298ae68b276802979
-  Death_Headfall:
-    ID: -165124764
-    valueGuid: dc0d63745a21b74dacfc708c5615e441
-  asdasdasfasda:
-    ID: 0
-    valueGuid: 00000000000000000000000000000000
 --- !u!114 &114000012379682154
 MonoBehaviour:
   m_ObjectHideFlags: 1

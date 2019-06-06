@@ -15,6 +15,13 @@ public class EvilHeadAI : Creature
     public GameObject deathFX;
     public GameObject keepOnDeath;
 
+    [Header("Audio:")]
+    public AudioSource audioSource;
+    public AudioClip hover;
+    public AudioClip telegraphAttack;
+    public AudioClip charge;
+    public AudioClip bite;
+
     [Header("Wwise")]
     public float MovementRTPC;
 
@@ -42,7 +49,9 @@ public class EvilHeadAI : Creature
     public override void Start(){
 		base.Start();
         // HINT: Hover sound start here
-	}
+        audioSource.clip = hover;
+        audioSource.Play();
+    }
 
     public override void OnSpotting()
     {
@@ -73,6 +82,8 @@ public class EvilHeadAI : Creature
         targetLocation = targetOfNPC.transform.position + Vector3.up;
         StartCoroutine(RotateTowardsTarget(targetLocation, 1f));
         // HINT: The head is sending a telegraph attack, this might need a sound effect
+        audioSource.clip = telegraphAttack;
+        audioSource.Play();
     }
 
 
@@ -113,6 +124,8 @@ public class EvilHeadAI : Creature
     {
         //print(Time.realtimeSinceStartup + ": ChargeTowardsPlayer");
         // HINT: Charge started, a telegrpah sound could be useful here
+        audioSource.clip = charge;
+        audioSource.Play();
 
         Vector3 currentPosition = transform.position;
         Vector3 destination = targetLocation + ((targetLocation) - currentPosition).normalized * 2f;
@@ -184,5 +197,7 @@ public class EvilHeadAI : Creature
     public void PlayBiteSound()
     {
         // HINT: Looks like a good place to play the bite sound
+        audioSource.clip = bite;
+        audioSource.Play();
     }
 }

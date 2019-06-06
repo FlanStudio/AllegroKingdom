@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 40754d3691e154862b44c60592b9e35a
-timeCreated: 1484054405
-licenseType: Free
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - lineRenderer: {instanceID: 0}
+  - endPoint: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - pAppear: {fileID: 8300000, guid: 035e157a7e76bf0498f3f407b505891f, type: 3}
+  - pGone: {fileID: 8300000, guid: e84a0eb41c2ec6242946e40d46766372, type: 3}
+  - chargeDoneParticles: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 114120808125309598}
   - component: {fileID: 114221525765478596}
   - component: {fileID: 114120475164830044}
+  - component: {fileID: 82731854959964606}
   m_Layer: 8
   m_Name: Wwizard
   m_TagString: Wwizard
@@ -1454,6 +1455,86 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!82 &82731854959964606
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012370163554}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000013780133844
 Animator:
   serializedVersion: 3
@@ -1656,14 +1737,6 @@ MonoBehaviour:
   InteractionEnabled: 1
   interactionSound: 1
   trigger: {fileID: 0}
-  PickUpEvent:
-    ID: 0
-    valueGuid: 00000000000000000000000000000000
-  PickupType:
-    ID: 0
-    valueGuid: 00000000000000000000000000000000
-    groupGuid: 00000000000000000000000000000000
-    groupID: 0
   OnBecameFocus:
     m_PersistentCalls:
       m_Calls: []
@@ -1757,22 +1830,10 @@ MonoBehaviour:
   StunParticles: {fileID: 0}
   Debugging:
     RaycastVisionRange: 0
-  HurtSound:
-    ID: 0
-    valueGuid: 88e547fd7e9a244e8cc540a8c5d3aba8
-  DeathSound:
-    ID: 0
-    valueGuid: 00000000000000000000000000000000
   isAlive: 1
   startPosition: {x: 0, y: 0, z: 0}
   daytime: 0
   AttackType: 0
-  PoofGimmickSound:
-    ID: 1035173718
-    valueGuid: 6f80b0c72ee41348ada18f99bdd38112
-  StaffHitGroundSound:
-    ID: -1437205764
-    valueGuid: fec33c04ca761644a960616573cb563d
   matChecker: {fileID: 114724201675619454}
   Gimmick1PoofParticles: {fileID: 1759330208133708, guid: 95e1666ecf8cb4807aaddf45ae55204c,
     type: 2}
@@ -1781,6 +1842,9 @@ MonoBehaviour:
   chargeParticles: {fileID: 114844843451730030}
   navMeshAgent: {fileID: 195000013306575552}
   navMeshObstacle: {fileID: 208164881853923320}
+  audioSource: {fileID: 82731854959964606}
+  poof: {fileID: 8300000, guid: e596a998963c70843b243ca7b4fecc08, type: 3}
+  staffGrowndHit: {fileID: 8300000, guid: e84a0eb41c2ec6242946e40d46766372, type: 3}
 --- !u!114 &114039394258082564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1813,11 +1877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d194b927782944d2ca81f0d00674450b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material:
-    ID: 389757836
-    valueGuid: 8c70463aac1d9d479bb4c3de1e9dc2c4
-    groupGuid: c8ce850565410c458f907f1fc8884a30
-    groupID: -230521123
+  material: 0
 --- !u!114 &114120808125309598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1830,15 +1890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestMarkAnimator: {fileID: 95000013780133844}
-  QuestlineProgressionRTPC:
-    ID: 500836401
-    valueGuid: 2b6e82b7592c0648b282d37cf93f2e48
-  QuestlineCompleteEvent:
-    ID: -1054493427
-    valueGuid: 66e98d277c6b2a469e4ca610fd7806cb
-  QuestlineAdvancedEvent:
-    ID: 844130829
-    valueGuid: 3d2721d57b3ef24e8a9b66160f6242a9
+  QuestlineProgressionRTPC: NaN
   StartQuestLineOnStart: 1
   Quests:
   - {fileID: 0}
@@ -2063,12 +2115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40754d3691e154862b44c60592b9e35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartChargeEvent:
-    ID: 1817926999
-    valueGuid: 48e913ca8afc864ca933feb51278a585
-  EndChargeEvent:
-    ID: 547945861
-    valueGuid: b595a0ac87736b4cac03d2462587900a
   lineRenderer: {fileID: 120399247484619230}
   refreshSpeed: 0.02
   yOffsets:

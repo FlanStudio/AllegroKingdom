@@ -9,6 +9,12 @@ using System.Collections;
 
 public class EvilSpitPlantAI : Creature
 {
+    [Header("Audio:")]
+    public AudioSource audioSource;
+    public AudioClip spit;
+    public AudioClip spitCharge;
+    public AudioClip plantDeath;
+
     [Header("Custom Creature Options:")]
     public GameObject bulletPrefab;
     public GameObject chargeParticles;
@@ -53,6 +59,8 @@ public class EvilSpitPlantAI : Creature
         if (targetOfNPC != null && !GameManager.Instance.AIPaused)
         {
             // HINT: Plant will launch a bullet, time to play the spit sound here
+            audioSource.clip = spit;
+            audioSource.Play();
 
             GameObject bullet = Instantiate(bulletPrefab, spitBulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward)) as GameObject; //TODO: Pool spitbullets
             bullet.GetComponent<EvilSpitPlantProjectile>().parent = gameObject;
@@ -66,6 +74,8 @@ public class EvilSpitPlantAI : Creature
     public void PlayChargeSound()
     {
         // HINT: Plant is charging a bullet, time to play the spit charging sound here
+        audioSource.clip = spitCharge;
+        audioSource.Play();
     }
 
     /// <summary>
@@ -132,5 +142,7 @@ public class EvilSpitPlantAI : Creature
     public void OnDeathHeadFall()
     {
         // HINT: Plant is dead, you might want to play the death head fall sound here
+        audioSource.clip = plantDeath;
+        audioSource.Play();
     }
 }
