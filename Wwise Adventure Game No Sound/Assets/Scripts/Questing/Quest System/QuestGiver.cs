@@ -25,6 +25,10 @@ namespace QuestSystem
         public bool StartQuestLineOnStart = true;
         public List<Quest> Quests;
 
+        [Header("Audio")]
+        public AudioSource audioSource;
+        public List<AudioClip> complete;
+
         #region private variables
         private int currentQuestIdx = 0;
         private bool initializingNewQuest = false;
@@ -60,6 +64,9 @@ namespace QuestSystem
 
             QuestlineProgressionRTPC = GetNormalizedQuestlineProgress() * 100f;
             // HINT: Questline progression RTPC changed, does this affect to any sound?
+            int clip = Random.Range(0, complete.Count);
+            audioSource.clip = complete[clip];
+            audioSource.Play();
             initializingNewQuest = false;
         }
 
@@ -87,11 +94,19 @@ namespace QuestSystem
             if (currentQuestIdx < Quests.Count)
             {
                 // HINT: Questline complete, you may want to play a sound here
+                int clip = Random.Range(0, complete.Count);
+                audioSource.clip = complete[clip];
+                audioSource.Play();
+
                 InitializeQuest(currentQuestIdx);
             }
             else
             {
                 // HINT: Questline complete, you may want to play a sound here
+                int clip = Random.Range(0, complete.Count);
+                audioSource.clip = complete[clip];
+                audioSource.Play();
+
                 if (OnQuestlineComplete != null)
                 {
                     OnQuestlineComplete(this);

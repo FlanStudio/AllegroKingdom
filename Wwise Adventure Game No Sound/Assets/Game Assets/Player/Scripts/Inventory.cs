@@ -55,6 +55,13 @@ public class Inventory : MonoBehaviour
 
     public static bool InventoryIsOut = false;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip inventoryOpened;
+    public AudioClip inventoryClosed;
+    public AudioClip inventorySelect;
+
+
     #region private variables
     private bool hasShown = false;
     private int SelectIncrementor_Row1 = 0;
@@ -707,6 +714,9 @@ public class Inventory : MonoBehaviour
         {
             canvasGroup.interactable = true;
             // HINT: You might want to play the inventory opened sound here
+            audioSource.clip = inventoryOpened;
+            audioSource.Play();
+
             InventoryIsOut = true;
             if (EventSystem.current != null)
             {
@@ -729,6 +739,9 @@ public class Inventory : MonoBehaviour
         {
             canvasGroup.interactable = false;
             // HINT: You might want to play the inventory closed sound here
+            audioSource.clip = inventoryClosed;
+            audioSource.Play();
+
             InventoryIsOut = false;
             GameManager.Instance.gameSpeedHandler.UnPauseGameSpeed(gameObject.GetInstanceID());
 
@@ -785,6 +798,8 @@ public class Inventory : MonoBehaviour
     public void ButtonIncrement(int layer)
     {
         // HINT: You may want to play the inventory select sound here
+        audioSource.clip = inventorySelect;
+        audioSource.Play();
 
         if (Panel.activeInHierarchy && hasShown)
         {
@@ -809,6 +824,9 @@ public class Inventory : MonoBehaviour
     public void InversedIncrement(int layer)
     {
         // HINT: You may want to play the inventory select sound here
+        audioSource.clip = inventorySelect;
+        audioSource.Play();
+
         if (Panel.activeInHierarchy && hasShown)
         {
             if (layer == 0)
