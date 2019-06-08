@@ -24,6 +24,9 @@ public class WorldTeleporter : MonoBehaviour
     public GameObject teleportParticles;
     public UnityEvent OnTeleport;
 
+    [Header("Teleport")]
+    public AudioSource tpAudio;
+
     private UnityAction<int> teleport;
 
     private void Awake()
@@ -76,6 +79,8 @@ public class WorldTeleporter : MonoBehaviour
         {
             PlayerManager.Instance.player.transform.position = destinations[dropdown.value - 1].transform.position;
             // HINT: You may want to play the teleport sound effect here
+            tpAudio.Play();
+
             dropdown.value = 0;
             dropdown.captionText.text = LanguageManager.GetText("menu_teleport");
 
