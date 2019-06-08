@@ -11,7 +11,7 @@ using UnityEngine;
 namespace QuestSystem
 {
     public delegate void QuestGiverEvent(QuestGiver questGiver);
-    public class QuestGiver : InteractableNPC
+    public class    QuestGiver : InteractableNPC
     {
         public static event QuestGiverEvent OnQuestlineForcedChangeStarted;
         public static event QuestGiverEvent OnQuestlineForcedChangeEnded;
@@ -64,9 +64,8 @@ namespace QuestSystem
 
             QuestlineProgressionRTPC = GetNormalizedQuestlineProgress() * 100f;
             // HINT: Questline progression RTPC changed, does this affect to any sound?
-            int clip = Random.Range(0, complete.Count);
-            audioSource.clip = complete[clip];
-            audioSource.Play();
+            // No.
+
             initializingNewQuest = false;
         }
 
