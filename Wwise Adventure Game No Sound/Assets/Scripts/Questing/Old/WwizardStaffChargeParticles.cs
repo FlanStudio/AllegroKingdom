@@ -45,7 +45,8 @@ public class WwizardStaffChargeParticles : MonoBehaviour
         {
             // HINT: Wizard staff charge particles appear, you may want to play the appropiate sound effect here
             audioSource.clip = pAppear;
-            audioSource.Play();
+            if(audioSource != null)
+                audioSource.Play();
 
             chargeRoutine = AnimatePoints();
             StartCoroutine(chargeRoutine);
@@ -85,7 +86,8 @@ public class WwizardStaffChargeParticles : MonoBehaviour
     {
         // HINT: Wizard staff charge particles disappear, you may want to play the appropiate sound effect here
         audioSource.clip = pGone;
-        audioSource.Play();
+        if(audioSource != null)
+            audioSource.Play();
 
         StopCoroutine(chargeRoutine);
         if (lineRenderer != null)

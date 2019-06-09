@@ -8,6 +8,8 @@
 using System.Collections;
 using UnityEngine.Events;
 
+public enum PickUpType {General, Book, Coin, Crystals, EvilEssence, Key, Mushroom, Pinecone, Axe, Dagger, Hammer, Pickaxe, Sword};
+
 public class Pickup : MonoBehaviour, IInteractable
 {
 	public GameObject pickupParticles;
@@ -39,6 +41,7 @@ public class Pickup : MonoBehaviour, IInteractable
 	public UnityEvent OnBecameFocus;
 	public UnityEvent OnInteraction;
 
+    public PickUpType pickType;
 	void Start()
 	{
 		randomOffset = Random.Range(0, 2 * Mathf.PI);
@@ -186,9 +189,10 @@ public class Pickup : MonoBehaviour, IInteractable
 
 			if (interactionSound)
 			{
-				// HINT: Play the sound for this pickup
-			}
-			if (pickupParticles != null)
+                // HINT: Play the sound for this pickup
+                PlayerManager.Instance.player.GetComponent<AdventuressAnimationEventHandler>().PickUpItem(pickType);
+            }
+            if (pickupParticles != null)
 			{
 				GameObject p = Instantiate(pickupParticles, transform.position, Quaternion.identity) as GameObject;
 				Destroy(p, 5f);
@@ -204,10 +208,10 @@ public class Pickup : MonoBehaviour, IInteractable
 				InteractionManager.SetCanInteract(this.gameObject, false);
 				StartCoroutine(PickupAnimation());
 			}
-		}
-	}
+        }
+    }
 
-	public void SetInteractionEnabled(bool enabled)
+    public void SetInteractionEnabled(bool enabled)
 	{
 		InteractionEnabled = enabled;
 

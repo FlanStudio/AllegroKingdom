@@ -12,12 +12,16 @@ using UnityEngine.UI;
 public class CoinPickup : MonoBehaviour {
 
     public bool playSpawnSoundAtSpawn = true;
+    public AudioClip coinsSounds;
 
-	void Start(){
+
+    void Start(){
         if (playSpawnSoundAtSpawn){
             // HINT: You might want to play the Coin pickup sound here
+            AudioSource audioSource = PlayerManager.Instance.player.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(coinsSounds, 0.7F);
         }
-	}
+    }
 
 	public void AddCoinToCoinHandler(){
 		InteractionManager.SetCanInteract(this.gameObject, false);

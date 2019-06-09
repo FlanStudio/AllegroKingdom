@@ -52,6 +52,7 @@ public class Weapon : MonoBehaviour, IInteractable
     public UnityEvent OnUnequip;
 
     private List<GameObject> alreadyHitObjects = new List<GameObject>();
+    int hitMat = 0;
 
     #region hidden public variables
     [HideInInspector]
@@ -167,16 +168,27 @@ public class Weapon : MonoBehaviour, IInteractable
                 {
                     attack.swingType = SwingTypes.Right;
                     // HINT: Weapon combo state 1, you may want to take this into account when playing the weapon swing sound
+                    //AdventuressAnimationEventHandler adventuressAnimationEventHandler = PlayerManager.Instance.player.GetComponent<AdventuressAnimationEventHandler>();
+
+                    //adventuressAnimationEventHandler.Weapon_SwingEvent();
                 }
                 else if (currentAnimation.IsName("Player_LeftSwing"))
                 {
                     attack.swingType = SwingTypes.Left;
                     // HINT: Weapon combo state 2, you may want to take this into account when playing the weapon swing sound
+                   // AdventuressAnimationEventHandler adventuressAnimationEventHandler = PlayerManager.Instance.player.GetComponent<AdventuressAnimationEventHandler>();
+
+                   //adventuressAnimationEventHandler.Weapon_SwingEvent();
+
                 }
                 else if (currentAnimation.IsName("Player_TopSwing"))
                 {
                     attack.swingType = SwingTypes.Top;
                     // HINT: Weapon combo state 3, you may want to take this into account when playing the weapon swing sound
+                   // AdventuressAnimationEventHandler adventuressAnimationEventHandler = PlayerManager.Instance.player.GetComponent<AdventuressAnimationEventHandler>();
+
+                   // adventuressAnimationEventHandler.Weapon_SwingEvent();
+
                 }
 
                 if (!alreadyHitObjects.Contains(col.gameObject))
@@ -186,6 +198,7 @@ public class Weapon : MonoBehaviour, IInteractable
                     if (sm != null) {
 
                         uint thisSwitch = 0;
+                        hitMat = sm.material;
                         //print("Current Switch: "+ thisSwitch +", New: "+ sm.material.ID);
 
                         // HINT: Update impact material
@@ -234,6 +247,9 @@ public class Weapon : MonoBehaviour, IInteractable
         alreadyHitObjects.Add(HitObj);
         // HINT: Play weapon impact event here, weapon type = transform.parent.gameObject
 
+        AdventuressAnimationEventHandler adventuressAnimationEventHandler = PlayerManager.Instance.player.GetComponent<AdventuressAnimationEventHandler>();
+
+        adventuressAnimationEventHandler.WeaponSound(hitMat);
     }
 
 }

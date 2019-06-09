@@ -9,12 +9,25 @@ using System.Collections;
 
 public class AdventuressAnimationEventHandler : MonoBehaviour
 {
-    public AudioClip leftFootStep;
-    public AudioClip rightFootStep;
+    public AudioClip[] footStepsWalk;
+    public AudioClip[] footStepsRun;
 
     [Header("Object Links")]
     [SerializeField]
     private Animator playerAnimator;
+
+    [Header("Weapons")]
+    public AudioClip[] swordSounds;
+    public AudioClip[] daggerSounds;
+    public AudioClip[] axeSounds;
+    public AudioClip[] pickAxeSounds;
+    public AudioClip[] hammerSounds;
+
+    [Header("Swing")]
+    public AudioClip[] swingSounds;
+
+    [Header("PickUps")]
+    public AudioClip[] PickUps;
 
     [SerializeField]
     private GameObject runParticles;
@@ -89,7 +102,10 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
                         particlePosition = foot_L.transform.position;
                         FootstepParticles(particlePosition);
                         AudioSource audioSource = GetComponent<AudioSource>();
-                        audioSource.PlayOneShot(leftFootStep, 0.7F);
+                        if(Input.GetKey(KeyCode.LeftShift))
+                            audioSource.PlayOneShot(footStepsWalk[Random.Range(0,5)], 0.7F);
+                        else
+                            audioSource.PlayOneShot(footStepsRun[Random.Range(0,5)], 0.7F);
                     }
                 }
                 else
@@ -100,7 +116,10 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
                         particlePosition = foot_R.transform.position;
                         FootstepParticles(particlePosition);
                         AudioSource audioSource = GetComponent<AudioSource>();
-                        audioSource.PlayOneShot(rightFootStep, 0.7F);
+                        if (Input.GetKey(KeyCode.LeftShift))
+                            audioSource.PlayOneShot(footStepsWalk[Random.Range(0, 5)], 0.7F);
+                        else
+                            audioSource.PlayOneShot(footStepsRun[Random.Range(0, 5)], 0.7F);
                     }
                 }
             }
@@ -145,6 +164,20 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         Weapon W = PlayerManager.Instance.equippedWeaponInfo;
         // HINT: PlayerManager.Instance.weaponSlot contains the selected weapon;
         // HINT: This is a good place to play the weapon swing sounds
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int indexSound = Random.Range(0, 3);
+        if(playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Player_LeftSwing"))
+        {
+            audioSource.PlayOneShot(swingSounds[indexSound], 0.7F);
+        }
+        else if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Player_RightSwing"))
+        {
+            audioSource.PlayOneShot(swingSounds[indexSound + 4], 0.7F);
+        }
+        else if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Player_TopSwing"))
+        {
+            audioSource.PlayOneShot(swingSounds[indexSound + 8], 0.7F);
+        }
     }
 
     public void PauseMovement()
@@ -177,15 +210,91 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         PlayerManager.Instance.ResumeMovement(gameObject);
     }
 
-    public void PickUpItem()
+    public void PickUpItem(PickUpType pickType)
     {
         PlayerManager.Instance.PickUpEvent();
         // HINT: This is a good place to play the Get item sound and stinger
+        AudioSource audioSource = GetComponent<AudioSource>();
+        switch (pickType)
+        {
+            case PickUpType.General:
+                audioSource.PlayOneShot(PickUps[9], 0.7F);
+                break;
+            case PickUpType.Book:
+                audioSource.PlayOneShot(PickUps[0], 0.7F);
+                break;
+            case PickUpType.Coin:
+                audioSource.PlayOneShot(PickUps[Random.Range(1,4)], 0.7F);
+                break;
+            case PickUpType.Crystals:
+                audioSource.PlayOneShot(PickUps[Random.Range(5, 7)], 0.7F);
+                break;
+            case PickUpType.EvilEssence:
+                audioSource.PlayOneShot(PickUps[8], 0.7F);
+                break;
+            case PickUpType.Key:
+                audioSource.PlayOneShot(PickUps[10], 0.7F);
+                break;
+            case PickUpType.Mushroom:
+                audioSource.PlayOneShot(PickUps[11], 0.7F);
+                break;
+            case PickUpType.Pinecone:
+                audioSource.PlayOneShot(PickUps[12], 0.7F);
+                break;
+            case PickUpType.Axe:
+                audioSource.PlayOneShot(PickUps[13], 0.7F);
+                break;
+            case PickUpType.Dagger:
+                audioSource.PlayOneShot(PickUps[14], 0.7F);
+                break;
+            case PickUpType.Hammer:
+                audioSource.PlayOneShot(PickUps[15], 0.7F);
+                break;
+            case PickUpType.Pickaxe:
+                audioSource.PlayOneShot(PickUps[16], 0.7F);
+                break;
+            case PickUpType.Sword:
+                audioSource.PlayOneShot(PickUps[17], 0.7F);
+                break;
+        }
     }
 
-    public void WeaponSound()
+    public void WeaponSound(int material)
     {
         Weapon EquippedWeapon = PlayerManager.Instance.equippedWeaponInfo;
+        AudioSource audioSource = GetComponent<AudioSource>();
         // HINT: This is a good place to play equipped weapon impact sound
+
+        switch (EquippedWeapon.weaponType)
+        {
+            case WeaponTypes.None:
+                break;
+            case WeaponTypes.Dagger:
+                if (daggerSounds[material] != null)
+                    audioSource.PlayOneShot(daggerSounds[material], 0.7F);
+                break;
+            case WeaponTypes.Sword:
+                if (swordSounds[material] != null)
+                    audioSource.PlayOneShot(swordSounds[material], 0.7F);
+                break;
+            case WeaponTypes.Axe:
+                if (axeSounds[material] != null)
+                    audioSource.PlayOneShot(axeSounds[material], 0.7F);
+                break;
+            case WeaponTypes.PickAxe:
+                if (pickAxeSounds[material] != null)
+                    audioSource.PlayOneShot(pickAxeSounds[material], 0.7F);
+                break;
+            case WeaponTypes.Hammer:
+                if(hammerSounds[material] != null)
+                    audioSource.PlayOneShot(hammerSounds[material], 0.7F);
+                break;
+            case WeaponTypes.EvilSpitPlant:
+                break;
+            case WeaponTypes.EvilCrawler:
+                break;
+            case WeaponTypes.EvilHead:
+                break;
+        }
     }
 }
