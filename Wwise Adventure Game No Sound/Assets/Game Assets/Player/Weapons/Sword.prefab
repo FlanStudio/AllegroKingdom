@@ -180,6 +180,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: c5e14c44c5a92431dafacb6539320217, type: 2}
   m_StaticBatchInfo:
@@ -214,6 +215,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: e7bc36fa7880f42c6bc743a0bf47608e, type: 2}
   - {fileID: 2100000, guid: e3645651899b44d4e95cd8df11428a73, type: 2}
@@ -300,14 +302,6 @@ MonoBehaviour:
   InteractionEnabled: 1
   interactionSound: 1
   trigger: {fileID: 0}
-  PickUpEvent:
-    ID: 0
-    valueGuid: a7fa0ef58c3dd5408123e8097b289ecf
-  PickupType:
-    ID: -1840351036
-    valueGuid: 534d4bfbca5f1942aa50f5ce3ce8ed33
-    groupGuid: 0e1b82d93694da4290059e08a1150475
-    groupID: -1043133740
   OnBecameFocus:
     m_PersistentCalls:
       m_Calls: []
@@ -318,6 +312,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  pickType: 12
 --- !u!114 &114000011760853370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,29 +345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bbb0657c59a4f78a7d975cb1e30519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponImpact:
-    ID: -599624381
-    valueGuid: 0b954917b0d5c64094306f0d4f7a516e
-  WeaponTypeSwitch:
-    ID: -1840351036
-    valueGuid: 534d4bfbca5f1942aa50f5ce3ce8ed33
-    groupGuid: 0e1b82d93694da4290059e08a1150475
-    groupID: -1043133740
-  WeaponCombo1:
-    ID: -1896182288
-    valueGuid: 921ade1902f7e74fa59ca18f6f5ed385
-    groupGuid: 3cefd56b2ad8a24e8dbec4a33c57e2bb
-    groupID: -1961570371
-  WeaponCombo2:
-    ID: 1736510753
-    valueGuid: 3e174b46595726448bea51d233fc13cd
-    groupGuid: 3cefd56b2ad8a24e8dbec4a33c57e2bb
-    groupID: -1961570371
-  WeaponCombo3:
-    ID: -1878201000
-    valueGuid: 134cc80aeb51d34da1a6e5df8a234e32
-    groupGuid: 3cefd56b2ad8a24e8dbec4a33c57e2bb
-    groupID: -1961570371
   weaponType: 2
   weaponAnimationType: 0
   equipped: 0

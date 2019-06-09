@@ -91,6 +91,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: c5e14c44c5a92431dafacb6539320217, type: 2}
   m_StaticBatchInfo:
@@ -125,6 +126,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 1bf0af7eee5034af9b14135ac1aacce3, type: 2}
   - {fileID: 2100000, guid: 6ad46824cfef245bcb600fc0ffeb6d78, type: 2}
@@ -220,14 +222,6 @@ MonoBehaviour:
   InteractionEnabled: 1
   interactionSound: 1
   trigger: {fileID: 135000011866777490}
-  PickUpEvent:
-    valueGuid: 8ba2482dceb9744ea06d2ed1f9a01f59
-    ID: 509318909
-  PickupType:
-    valueGuid: d95fb2b36412c74681935c0a6d9a440c
-    ID: 1183067778
-    groupGuid: e2d432e11990704a87be36d11a6106c9
-    groupID: -655375495
   OnBecameFocus:
     m_PersistentCalls:
       m_Calls: []
@@ -238,6 +232,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  pickType: 5
 --- !u!114 &114521117902965338
 MonoBehaviour:
   m_ObjectHideFlags: 1
