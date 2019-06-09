@@ -212,7 +212,6 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
 
     public void PickUpItem(PickUpType pickType)
     {
-        PlayerManager.Instance.PickUpEvent();
         // HINT: This is a good place to play the Get item sound and stinger
         AudioSource audioSource = GetComponent<AudioSource>();
         switch (pickType)
@@ -242,18 +241,23 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
                 audioSource.PlayOneShot(PickUps[12], 0.7F);
                 break;
             case PickUpType.Axe:
+                PlayerManager.Instance.PickUpEvent();
                 audioSource.PlayOneShot(PickUps[13], 0.7F);
                 break;
             case PickUpType.Dagger:
+                PlayerManager.Instance.PickUpEvent();
                 audioSource.PlayOneShot(PickUps[14], 0.7F);
                 break;
             case PickUpType.Hammer:
+                PlayerManager.Instance.PickUpEvent();
                 audioSource.PlayOneShot(PickUps[15], 0.7F);
                 break;
             case PickUpType.Pickaxe:
+                PlayerManager.Instance.PickUpEvent();
                 audioSource.PlayOneShot(PickUps[16], 0.7F);
                 break;
             case PickUpType.Sword:
+                PlayerManager.Instance.PickUpEvent();
                 audioSource.PlayOneShot(PickUps[17], 0.7F);
                 break;
         }
